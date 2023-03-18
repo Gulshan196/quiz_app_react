@@ -6,6 +6,7 @@ export default function Questions() {
   const [ans,setAns] = useState();
   const diff = useRef(1);
   const [buttonClicked, setButtonClicked] = useState(false);
+  const [res ,setRes] = useState(0);
 
   const [correct,setCorrect] = useState();
   const [change , setChange] =  useState(false);
@@ -21,12 +22,17 @@ export default function Questions() {
 
  function checkAnswer(ans) {
 setAns(ans)
-if(ans === ques[0].correct_ans)  setCorrect("ri");
+if(ans === ques[0].correct_ans)  {
+  setCorrect("ri");
+   setRes((res)=>res+1)
+   console.log('answer',res);}
+  
 else setCorrect("wr");
 
 setTimeout(()=>{
  diff.current = diff.current + 1;
- setChange((val) => ! val)
+ if(diff.current === 5) alert(`your score is ${res===0 ? 0 : res+1} out of 10`)
+ setChange((val) => ! val);
 },2000)
  }
 
