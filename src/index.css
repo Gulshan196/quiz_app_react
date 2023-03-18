@@ -29,13 +29,14 @@ box-sizing: border-box;
 
 .options{
   width:40%;
+  height:50px;
   border:1px solid;
   border-radius: 5px;
   margin: 10px 0;
   padding: 5px;
   background-color: rgb(14, 186, 229);
   color: white;
- 
+ font-size: 30px;
 }
 
 .options:hover{
@@ -68,6 +69,8 @@ box-sizing: border-box;
   padding: 5px;
   background-color: green;
   color: white;
+  height:50px;
+  font-size: 30px;
 }
 
 .wrong-option{
@@ -78,5 +81,7 @@ box-sizing: border-box;
   padding: 5px;
   background-color: red;
   color: white;
+  height:50px;
+  font-size: 30px;
 }
 
