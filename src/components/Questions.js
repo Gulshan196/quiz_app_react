@@ -10,10 +10,12 @@ export default function Questions() {
 
   const [correct,setCorrect] = useState();
   const [change , setChange] =  useState(false);
+  let a = 0; 
  
 
   function getRandomQues() 
   {
+    if(diff.current === 5) alert(`your score is ${res} out of 10`);
     axios.get(`https://quiz-app-express-e6w9.vercel.app/ques/getrand/${diff.current}`).then(val => {setQues(val.data)
     setCorrect();
   setButtonClicked(false)});
@@ -24,14 +26,12 @@ export default function Questions() {
 setAns(ans)
 if(ans === ques[0].correct_ans)  {
   setCorrect("ri");
-   setRes((res)=>res+1)
-   console.log('answer',res);}
+   setRes((res)=>++res);}
   
 else setCorrect("wr");
 
 setTimeout(()=>{
  diff.current = diff.current + 1;
- if(diff.current === 5) alert(`your score is ${res===0 ? 0 : res+1} out of 10`)
  setChange((val) => ! val);
 },2000)
  }
