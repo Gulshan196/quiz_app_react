@@ -10,7 +10,6 @@ export default function Questions() {
 
   const [correct,setCorrect] = useState();
   const [change , setChange] =  useState(false);
-  let a = 0; 
  
 
   function getRandomQues() 
